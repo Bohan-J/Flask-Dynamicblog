@@ -1,0 +1,98 @@
+2020-05-22 18:46:45,184 ERROR: Exception on / [GET] [in /Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/app.py:1891]
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/redis/connection.py", line 550, in connect
+    sock = self._connect()
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/redis/connection.py", line 606, in _connect
+    raise err
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/redis/connection.py", line 594, in _connect
+    sock.connect(socket_address)
+ConnectionRefusedError: [Errno 61] Connection refused
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/program/dynamicblog/app/models.py", line 179, in get_rq_job
+    rq_job = rq.job.Job.fetch(self.id, connection=app.redis)
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/rq/job.py", line 279, in fetch
+    job.refresh()
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/rq/job.py", line 489, in refresh
+    data = self.connection.hgetall(self.key)
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/redis/client.py", line 3014, in hgetall
+    return self.execute_command('HGETALL', name)
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/redis/client.py", line 898, in execute_command
+    conn = self.connection or pool.get_connection(command_name, **options)
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/redis/connection.py", line 1183, in get_connection
+    connection.connect()
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/redis/connection.py", line 554, in connect
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 61 connecting to None:6379. Connection refused.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/Users/kevin/Desktop/program/dynamicblog/app/routes.py", line 30, in index
+    return render_template('index.html', title='Home', form=form,
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/templating.py", line 137, in render_template
+    return _render(
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/kevin/Desktop/program/dynamicblog/app/templates/index.html", line 2, in top-level template code
+    {% import 'bootstrap/wtf.html' as wtf %}
+  File "/Users/kevin/Desktop/program/dynamicblog/app/templates/base.html", line 1, in top-level template code
+    {% extends 'bootstrap/base.html' %}
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 1, in top-level template code
+    {% block doc -%}
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 4, in block "doc"
+    {%- block html %}
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 20, in block "html"
+    {% block body -%}
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask_bootstrap/templates/bootstrap/base.html", line 23, in block "body"
+    {% block content -%}
+  File "/Users/kevin/Desktop/program/dynamicblog/app/templates/base.html", line 55, in block "content"
+    <span id="{{ task.id }}-progress">{{ task.get_progress() }}</span>
+  File "/Users/kevin/Desktop/program/dynamicblog/app/models.py", line 185, in get_progress
+    job = self.get_rq_job()
+  File "/Users/kevin/Desktop/program/dynamicblog/app/models.py", line 180, in get_rq_job
+    except (redis.exception.RedisError, rq.exception.NoSuchJobError):
+AttributeError: module 'redis' has no attribute 'exception'
+2020-05-22 20:10:59,799 INFO: Dynamicblog startup [in ./app/__init__.py:56]
+2020-05-22 20:11:20,255 INFO: Dynamicblog startup [in ./app/__init__.py:56]
+2020-05-22 20:14:02,320 INFO: Dynamicblog startup [in /Users/kevin/Desktop/program/dynamicblog/app/__init__.py:56]
+2020-05-22 20:14:12,921 INFO: Dynamicblog startup [in ./app/__init__.py:56]
+2020-05-22 20:16:07,597 INFO: Dynamicblog startup [in /Users/kevin/Desktop/program/dynamicblog/app/__init__.py:56]
+2020-05-22 20:16:15,378 INFO: Dynamicblog startup [in ./app/__init__.py:56]
+2020-05-22 20:18:00,762 INFO: Dynamicblog startup [in /Users/kevin/Desktop/program/dynamicblog/app/__init__.py:61]
+2020-05-22 20:18:12,958 INFO: Dynamicblog startup [in /Users/kevin/Desktop/program/dynamicblog/app/__init__.py:61]
+2020-05-22 20:18:20,040 INFO: Dynamicblog startup [in ./app/__init__.py:61]
+2020-05-22 20:19:59,397 INFO: Dynamicblog startup [in ./app/__init__.py:61]
+2020-05-22 20:20:30,341 INFO: Dynamicblog startup [in /Users/kevin/Desktop/program/dynamicblog/app/__init__.py:56]
+2020-05-22 20:20:38,413 INFO: Dynamicblog startup [in ./app/__init__.py:56]
+2020-05-22 20:23:44,842 INFO: Dynamicblog startup [in /Users/kevin/Desktop/program/dynamicblog/app/__init__.py:56]
+2020-05-22 20:23:51,921 INFO: Dynamicblog startup [in ./app/__init__.py:56]
+2020-05-22 20:25:55,376 INFO: Dynamicblog startup [in /Users/kevin/Desktop/program/dynamicblog/app/__init__.py:56]
+2020-05-22 20:26:09,689 INFO: Dynamicblog startup [in ./app/__init__.py:56]
+2020-05-22 20:34:14,036 INFO: Dynamicblog startup [in ./app/__init__.py:56]
+2020-05-22 20:35:35,580 INFO: Dynamicblog startup [in /Users/kevin/Desktop/program/dynamicblog/app/__init__.py:56]
+2020-05-22 20:37:31,383 INFO: Dynamicblog startup [in ./app/__init__.py:56]
+2020-05-22 20:42:08,668 INFO: Dynamicblog startup [in ./app/__init__.py:56]
+2020-05-22 20:45:40,103 INFO: Dynamicblog startup [in /Users/kevin/Desktop/program/dynamicblog/app/__init__.py:56]
