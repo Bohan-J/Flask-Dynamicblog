@@ -1,4 +1,4 @@
-2020-05-21 01:18:27,425 ERROR: Exception on /search [GET] [in /Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/app.py:1891]
+2020-05-22 01:45:18,316 ERROR: Exception on /search [GET] [in /Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/urllib3/connection.py", line 159, in _new_conn
     conn = connection.create_connection(
@@ -37,7 +37,7 @@ Traceback (most recent call last):
     conn = self._new_conn()
   File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/urllib3/connection.py", line 171, in _new_conn
     raise NewConnectionError(
-urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10b89d430>: Failed to establish a new connection: [Errno 61] Connection refused
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x108de4250>: Failed to establish a new connection: [Errno 61] Connection refused
 
 During handling of the above exception, another exception occurred:
 
@@ -58,7 +58,7 @@ Traceback (most recent call last):
     return func(*args, **kwargs)
   File "/Users/kevin/Desktop/program/dynamicblog/app/routes.py", line 220, in search
     posts, total = Post.search(g.search_form.q.data, page,
-  File "/Users/kevin/Desktop/program/dynamicblog/app/models.py", line 14, in search
+  File "/Users/kevin/Desktop/program/dynamicblog/app/models.py", line 15, in search
     ids, total = query_index(cls.__tablename__, expression, page, per_page)
   File "/Users/kevin/Desktop/program/dynamicblog/app/search.py", line 19, in query_index
     search = app.elasticsearch.search(
@@ -70,5 +70,4 @@ Traceback (most recent call last):
     status, headers_response, data = connection.perform_request(
   File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/elasticsearch/connection/http_urllib3.py", line 241, in perform_request
     raise ConnectionError("N/A", str(e), e)
-elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x10b89d430>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x10b89d430>: Failed to establish a new connection: [Errno 61] Connection refused)
-2020-05-21 01:19:28,214 INFO: Dynamicblog startup [in /Users/kevin/Desktop/program/dynamicblog/app/__init__.py:55]
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x108de4250>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x108de4250>: Failed to establish a new connection: [Errno 61] Connection refused)

@@ -1,46 +1,4 @@
-2020-05-21 01:25:45,560 ERROR: Exception on /search [GET] [in /Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/urllib3/connection.py", line 159, in _new_conn
-    conn = connection.create_connection(
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/urllib3/util/connection.py", line 84, in create_connection
-    raise err
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/urllib3/util/connection.py", line 74, in create_connection
-    sock.connect(sa)
-ConnectionRefusedError: [Errno 61] Connection refused
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/elasticsearch/connection/http_urllib3.py", line 228, in perform_request
-    response = self.pool.urlopen(
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 724, in urlopen
-    retries = retries.increment(
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/urllib3/util/retry.py", line 379, in increment
-    raise six.reraise(type(error), error, _stacktrace)
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/urllib3/packages/six.py", line 735, in reraise
-    raise value
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 670, in urlopen
-    httplib_response = self._make_request(
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/urllib3/connectionpool.py", line 392, in _make_request
-    conn.request(method, url, **httplib_request_kw)
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/http/client.py", line 1230, in request
-    self._send_request(method, url, body, headers, encode_chunked)
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/http/client.py", line 1276, in _send_request
-    self.endheaders(body, encode_chunked=encode_chunked)
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/http/client.py", line 1225, in endheaders
-    self._send_output(message_body, encode_chunked=encode_chunked)
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/http/client.py", line 1004, in _send_output
-    self.send(msg)
-  File "/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/http/client.py", line 944, in send
-    self.connect()
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/urllib3/connection.py", line 187, in connect
-    conn = self._new_conn()
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/urllib3/connection.py", line 171, in _new_conn
-    raise NewConnectionError(
-urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10c1c4bb0>: Failed to establish a new connection: [Errno 61] Connection refused
-
-During handling of the above exception, another exception occurred:
-
+2020-05-22 20:45:44,876 ERROR: Exception on /user/jbh [GET] [in /Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
     response = self.full_dispatch_request()
@@ -56,54 +14,31 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/kevin/Desktop/program/dynamicblog/app/routes.py", line 220, in search
-    posts, total = Post.search(g.search_form.q.data, page,
-  File "/Users/kevin/Desktop/program/dynamicblog/app/models.py", line 14, in search
-    ids, total = query_index(cls.__tablename__, expression, page, per_page)
-  File "/Users/kevin/Desktop/program/dynamicblog/app/search.py", line 19, in query_index
-    search = app.elasticsearch.search(
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/elasticsearch/client/utils.py", line 92, in _wrapped
-    return func(*args, params=params, headers=headers, **kwargs)
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/elasticsearch/client/__init__.py", line 1622, in search
-    return self.transport.perform_request(
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/elasticsearch/transport.py", line 355, in perform_request
-    status, headers_response, data = connection.perform_request(
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/elasticsearch/connection/http_urllib3.py", line 241, in perform_request
-    raise ConnectionError("N/A", str(e), e)
-elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x10c1c4bb0>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x10c1c4bb0>: Failed to establish a new connection: [Errno 61] Connection refused)
-2020-05-21 01:27:37,551 INFO: Dynamicblog startup [in /Users/kevin/Desktop/program/dynamicblog/app/__init__.py:51]
-2020-05-21 01:28:23,932 INFO: Dynamicblog startup [in /Users/kevin/Desktop/program/dynamicblog/app/__init__.py:51]
-2020-05-21 01:28:30,238 ERROR: Exception on /search [GET] [in /Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/kevin/Desktop/program/dynamicblog/app/routes.py", line 220, in search
-    posts, total = Post.search(g.search_form.q.data, page,
-  File "/Users/kevin/Desktop/program/dynamicblog/app/models.py", line 14, in search
-    ids, total = query_index(cls.__tablename__, expression, page, per_page)
-  File "/Users/kevin/Desktop/program/dynamicblog/app/search.py", line 19, in query_index
-    search = app.elasticsearch.search(
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/elasticsearch/client/utils.py", line 92, in _wrapped
-    return func(*args, params=params, headers=headers, **kwargs)
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/elasticsearch/client/__init__.py", line 1622, in search
-    return self.transport.perform_request(
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/elasticsearch/transport.py", line 355, in perform_request
-    status, headers_response, data = connection.perform_request(
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/elasticsearch/connection/http_urllib3.py", line 252, in perform_request
-    self._raise_error(response.status, raw_data)
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/elasticsearch/connection/base.py", line 281, in _raise_error
-    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(
-elasticsearch.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index', post, index_or_alias)
-2020-05-21 01:30:00,318 INFO: Dynamicblog startup [in /Users/kevin/Desktop/program/dynamicblog/app/__init__.py:55]
+  File "/Users/kevin/Desktop/program/dynamicblog/app/routes.py", line 58, in user
+    return render_template('user.html', user=user, posts=posts.items,
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/templating.py", line 137, in render_template
+    return _render(
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/templating.py", line 120, in _render
+    rv = template.render(context)
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/kevin/Desktop/program/dynamicblog/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/jinja2/environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/jinja2/_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/kevin/Desktop/program/dynamicblog/app/templates/base.html", line 55, in template
+    <span id="{{ task.id }}-progress">{{ $.ajax(task.get_progress()) }}</span>
+jinja2.exceptions.TemplateSyntaxError: unexpected char '$' at 2412
+2020-05-22 20:46:23,412 INFO: Dynamicblog startup [in /Users/kevin/Desktop/program/dynamicblog/app/__init__.py:56]
+2020-05-22 20:46:35,966 INFO: Dynamicblog startup [in ./app/__init__.py:56]
+2020-05-22 20:47:27,743 INFO: Dynamicblog startup [in /Users/kevin/Desktop/program/dynamicblog/app/__init__.py:56]
+2020-05-22 20:47:37,038 INFO: Dynamicblog startup [in ./app/__init__.py:56]
+2020-05-22 20:48:54,209 INFO: Dynamicblog startup [in /Users/kevin/Desktop/program/dynamicblog/app/__init__.py:56]
+2020-05-22 20:48:58,904 INFO: Dynamicblog startup [in ./app/__init__.py:56]
+2020-05-24 20:03:42,507 INFO: Dynamicblog startup [in /Users/kevin/Desktop/program/dynamicblog/app/__init__.py:56]

@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="05a8be84-bc3d-47fe-a28a-9f84f109801d" name="Default Changelist" comment="" />
+    <list default="true" id="05a8be84-bc3d-47fe-a28a-9f84f109801d" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.db" beforeDir="false" afterPath="$PROJECT_DIR$/app.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/dynamicblog.log" beforeDir="false" afterPath="$PROJECT_DIR$/logs/dynamicblog.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/dynamicblog.log.1" beforeDir="false" afterPath="$PROJECT_DIR$/logs/dynamicblog.log.1" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/dynamicblog.log.10" beforeDir="false" afterPath="$PROJECT_DIR$/logs/dynamicblog.log.10" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/dynamicblog.log.2" beforeDir="false" afterPath="$PROJECT_DIR$/logs/dynamicblog.log.2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/dynamicblog.log.3" beforeDir="false" afterPath="$PROJECT_DIR$/logs/dynamicblog.log.3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/dynamicblog.log.4" beforeDir="false" afterPath="$PROJECT_DIR$/logs/dynamicblog.log.4" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/dynamicblog.log.5" beforeDir="false" afterPath="$PROJECT_DIR$/logs/dynamicblog.log.5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/dynamicblog.log.6" beforeDir="false" afterPath="$PROJECT_DIR$/logs/dynamicblog.log.6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/dynamicblog.log.7" beforeDir="false" afterPath="$PROJECT_DIR$/logs/dynamicblog.log.7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/dynamicblog.log.8" beforeDir="false" afterPath="$PROJECT_DIR$/logs/dynamicblog.log.8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logs/dynamicblog.log.9" beforeDir="false" afterPath="$PROJECT_DIR$/logs/dynamicblog.log.9" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,7 +30,11 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1ay7S7fAH746xaNEgIzoOvYbPXd" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -24,6 +43,7 @@
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
@@ -68,9 +88,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="454" y="239" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590126127806">
-      <screen x="0" y="22" width="1440" height="814" />
+    <state x="454" y="239" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1590416011702">
+      <screen x="0" y="22" width="1440" height="813" />
     </state>
+    <state x="454" y="239" key="#com.intellij.fileTypes.FileTypeChooser/0.22.1440.813@0.22.1440.813" timestamp="1590416011702" />
     <state x="454" y="239" key="#com.intellij.fileTypes.FileTypeChooser/0.22.1440.814@0.22.1440.814" timestamp="1590126127806" />
     <state x="454" y="240" key="#com.intellij.fileTypes.FileTypeChooser/0.22.1440.816@0.22.1440.816" timestamp="1588906828689" />
     <state width="1419" height="210" key="GridCell.Tab.0.bottom" timestamp="1587697506622">

@@ -1,45 +1,4 @@
-2020-05-21 01:31:12,417 ERROR: Exception on /search [GET] [in /Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/app.py:1891]
-Traceback (most recent call last):
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/app.py", line 2447, in wsgi_app
-    response = self.full_dispatch_request()
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/app.py", line 1952, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/app.py", line 1821, in handle_user_exception
-    reraise(exc_type, exc_value, tb)
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/_compat.py", line 39, in reraise
-    raise value
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/app.py", line 1950, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/app.py", line 1936, in dispatch_request
-    return self.view_functions[rule.endpoint](**req.view_args)
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
-    return func(*args, **kwargs)
-  File "/Users/kevin/Desktop/program/dynamicblog/app/routes.py", line 220, in search
-    posts, total = Post.search(g.search_form.q.data, page,
-  File "/Users/kevin/Desktop/program/dynamicblog/app/models.py", line 14, in search
-    ids, total = query_index(cls.__tablename__, expression, page, per_page)
-  File "/Users/kevin/Desktop/program/dynamicblog/app/search.py", line 19, in query_index
-    search = app.elasticsearch.search(
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/elasticsearch/client/utils.py", line 92, in _wrapped
-    return func(*args, params=params, headers=headers, **kwargs)
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/elasticsearch/client/__init__.py", line 1622, in search
-    return self.transport.perform_request(
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/elasticsearch/transport.py", line 355, in perform_request
-    status, headers_response, data = connection.perform_request(
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/elasticsearch/connection/http_urllib3.py", line 252, in perform_request
-    self._raise_error(response.status, raw_data)
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/elasticsearch/connection/base.py", line 281, in _raise_error
-    raise HTTP_EXCEPTIONS.get(status_code, TransportError)(
-elasticsearch.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index', post, index_or_alias)
-2020-05-21 01:32:35,368 INFO: Dynamicblog startup [in /Users/kevin/Desktop/program/dynamicblog/app/__init__.py:55]
-2020-05-21 01:33:43,804 INFO: Dynamicblog startup [in /Users/kevin/Desktop/program/dynamicblog/app/__init__.py:55]
-2020-05-21 01:34:16,055 INFO: Dynamicblog startup [in /Users/kevin/Desktop/program/dynamicblog/app/__init__.py:51]
-2020-05-21 23:49:36,763 INFO: Dynamicblog startup [in /Users/kevin/Desktop/program/dynamicblog/app/__init__.py:51]
-2020-05-21 23:50:28,310 INFO: Dynamicblog startup [in ./app/__init__.py:51]
-2020-05-22 01:14:05,920 INFO: Dynamicblog startup [in /Users/kevin/Desktop/program/dynamicblog/app/__init__.py:51]
-2020-05-22 01:14:09,887 INFO: Dynamicblog startup [in /Users/kevin/Desktop/program/dynamicblog/app/__init__.py:51]
-2020-05-22 01:44:38,550 INFO: Dynamicblog startup [in /Users/kevin/Desktop/program/dynamicblog/app/__init__.py:56]
-2020-05-22 01:44:50,526 ERROR: Exception on /search [GET] [in /Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/app.py:1891]
+2020-05-24 20:04:16,497 ERROR: Exception on /index [POST] [in /Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask/app.py:1891]
 Traceback (most recent call last):
   File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/urllib3/connection.py", line 159, in _new_conn
     conn = connection.create_connection(
@@ -78,7 +37,7 @@ Traceback (most recent call last):
     conn = self._new_conn()
   File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/urllib3/connection.py", line 171, in _new_conn
     raise NewConnectionError(
-urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x108c184c0>: Failed to establish a new connection: [Errno 61] Connection refused
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x10338e190>: Failed to establish a new connection: [Errno 61] Connection refused
 
 During handling of the above exception, another exception occurred:
 
@@ -97,18 +56,27 @@ Traceback (most recent call last):
     return self.view_functions[rule.endpoint](**req.view_args)
   File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/flask_login/utils.py", line 272, in decorated_view
     return func(*args, **kwargs)
-  File "/Users/kevin/Desktop/program/dynamicblog/app/routes.py", line 220, in search
-    posts, total = Post.search(g.search_form.q.data, page,
-  File "/Users/kevin/Desktop/program/dynamicblog/app/models.py", line 15, in search
-    ids, total = query_index(cls.__tablename__, expression, page, per_page)
-  File "/Users/kevin/Desktop/program/dynamicblog/app/search.py", line 19, in query_index
-    search = app.elasticsearch.search(
+  File "/Users/kevin/Desktop/program/dynamicblog/app/routes.py", line 20, in index
+    db.session.commit()
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/sqlalchemy/orm/scoping.py", line 162, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 1036, in commit
+    self.transaction.commit()
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/sqlalchemy/orm/session.py", line 510, in commit
+    self.session.dispatch.after_commit(self.session)
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/sqlalchemy/event/attr.py", line 261, in __call__
+    fn(*args, **kw)
+  File "/Users/kevin/Desktop/program/dynamicblog/app/models.py", line 36, in after_commit
+    add_to_index(obj.__tablename__, obj)
+  File "/Users/kevin/Desktop/program/dynamicblog/app/search.py", line 9, in add_to_index
+    app.elasticsearch.index(index=index, id=model.id, body=payload, doc_type=index)
   File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/elasticsearch/client/utils.py", line 92, in _wrapped
     return func(*args, params=params, headers=headers, **kwargs)
-  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/elasticsearch/client/__init__.py", line 1622, in search
+  File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/elasticsearch/client/__init__.py", line 406, in index
     return self.transport.perform_request(
   File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/elasticsearch/transport.py", line 355, in perform_request
     status, headers_response, data = connection.perform_request(
   File "/Users/kevin/Desktop/program/dynamicblog/venv/lib/python3.8/site-packages/elasticsearch/connection/http_urllib3.py", line 241, in perform_request
     raise ConnectionError("N/A", str(e), e)
-elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x108c184c0>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x108c184c0>: Failed to establish a new connection: [Errno 61] Connection refused)
+elasticsearch.exceptions.ConnectionError: ConnectionError(<urllib3.connection.HTTPConnection object at 0x10338e190>: Failed to establish a new connection: [Errno 61] Connection refused) caused by: NewConnectionError(<urllib3.connection.HTTPConnection object at 0x10338e190>: Failed to establish a new connection: [Errno 61] Connection refused)
+2020-05-24 20:04:47,712 INFO: Dynamicblog startup [in ./app/__init__.py:56]
